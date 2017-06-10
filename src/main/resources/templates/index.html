@@ -270,7 +270,7 @@
                                     </strong>
                                 </li>
                                 <li>Data:
-                                    <strong><a href="#" th:text="${project.date}"></a>
+                                    <strong><a href="#" th:text="${#dates.format(project.date, 'MMM yyyy')}"></a>
                                     </strong>
                                 </li>
                                 <li>Serwis:
@@ -298,7 +298,6 @@
 
     <!-- Contact Form JavaScript -->
     <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
 
     <!-- Theme JavaScript -->
     <script src="js/freelancer.min.js"></script>

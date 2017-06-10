@@ -40,4 +40,11 @@ public class ContactForm {
     public void setMessage(String message) {
         this.message = message;
     }
+
+    public void cleanForm(){
+        name = null;
+        email = null;
+        phonenumber = null;
+        message = null;
+    }
 }
