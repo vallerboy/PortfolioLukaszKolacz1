@@ -1,6 +1,7 @@
 package com.example.PortfolioLukaszKolacz.controllers;
 
 import com.example.PortfolioLukaszKolacz.ContactService;
+import com.example.PortfolioLukaszKolacz.ProjectRepository;
 import com.example.PortfolioLukaszKolacz.models.forms.ContactForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,11 +23,19 @@ public class MainController {
     @Autowired
     ContactService contactService;
 
+    //Oskar
+    @Autowired
+    ProjectRepository projectRepository;
+
 
     @RequestMapping("/")
     public String index(Model model) {
         model.addAttribute("emailClass", new ContactForm());
         model.addAttribute("success", false);
+
+        // Oskar
+        model.addAttribute("projects", projectRepository.findAll());
+
         return "index";
     }
 
